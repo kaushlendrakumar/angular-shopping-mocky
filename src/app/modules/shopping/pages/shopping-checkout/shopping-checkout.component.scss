@@ -1,0 +1,43 @@
+.cart-conatiner{
+    padding: 64px 0px 0px 0px;
+    .cart-row{
+        margin: 0px;
+        .title-1{
+            padding: 12px 0px;
+        }
+        .cart-col{
+            padding: 12px;
+            // start table
+            table{
+                tbody{
+                    tr{
+                        th:last-child{
+                            text-align: right;
+                        }
+                    }
+                }
+                tbody{
+                    tr{
+                        .item-image{
+                            height: 80px;
+                            width: 80px;
+                            border-radius: 50%;
+                            border: 2px solid #eee;
+                            padding: 2px;
+                        }
+                        .action-item-wrap{
+                            button{
+                                width: 50px;
+                                font-weight: bold;
+                            }
+                        }
+                        .total-price-col{
+                            text-align: right;
+                        }
+                    }
+                }
+            }
+            // end table
+        }
+    }
+}

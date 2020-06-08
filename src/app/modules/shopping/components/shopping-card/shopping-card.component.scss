@@ -1,0 +1,30 @@
+.item-card{
+    width: 100% !important;
+    img{
+        height: 240px;
+    }
+    .card-body{
+        .card-title{
+            margin: 0;
+        }
+        .card-description{
+            color: rgba(102,102,102,0.8);
+            font-size: 12px;
+            padding: 4px 0px 8px 0px;
+        }
+    }
+    .card-footer{
+        padding: 0px;
+        background-color: #ffffff;
+        .add-to-card-btn{
+            width: 100%;
+            text-transform: uppercase;
+        }
+        .action-item-wrap{
+            button{
+                width: 50px;
+                font-weight: bold;
+            }
+        }
+    }
+}

@@ -1,0 +1,18 @@
+.listing-conatiner{
+    padding: 64px 0px 0px 0px;
+    .listing-row{
+        margin: 0px;
+        // start listing-col
+        .listing-col{
+            padding: 8px 12px;
+            .shopping-list-row{
+                margin: 0px;
+                .shopping-list-col{
+                    padding: 12px;
+                    
+                }
+            }
+        }
+        // end listing-col
+    }
+}

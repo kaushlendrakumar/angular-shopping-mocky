@@ -1,0 +1,49 @@
+<div class="container-fluid cart-conatiner">
+    <div class="row cart-row">
+        <div class="col-12 cart-col">
+            <h3 class="title-1">Shopping Cart</h3>
+            <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Product</th>
+                    <th class="text-center">Quantity</th>
+                    <th class="text-right">Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let itemDetails of pageDetails?.selectdItems; trackBy: index">
+                    <th>
+                      <img *ngIf="!itemDetails?.image" class="item-image" [src]="pageDetails?.details.notFoundImage" alt="img">
+                      <img *ngIf="itemDetails?.image" class="item-image" [src]="itemDetails.image" alt="img">
+                    </th>
+                    <td>{{itemDetails?.name}}</td>
+                    <td>
+                        <div class="d-flex justify-content-between align-items-center action-item-wrap">
+                            <button 
+                              (click)="updateCartItem('del', itemDetails)" type="button" class="btn btn-secondary item-add-btn">-</button>
+                            <span>{{itemDetails?.selectedCount}}</span>
+                            <button 
+                              (click)="updateCartItem('add', itemDetails)" type="button" class="btn btn-secondary item-remove-btn">+</button>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        ₹ {{itemDetails.price | number : '.2-2'}} * {{itemDetails?.selectedCount}}
+                      <div>
+                        <small><strong>₹ {{itemDetails.price * itemDetails?.selectedCount | number : '.2-2'}}</strong></small>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th colspan="4" class="total-price-col">₹ {{pageDetails?.totalPrice | number : '.2-2'}}</th>
+                  </tr>
+                  <tr>
+                    <td colspan="4">
+                        <button (click)="checkoutBtn()" class="btn btn-primary">Checkout</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>

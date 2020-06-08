@@ -1,0 +1,24 @@
+<div class="card item-card">
+    <img *ngIf="!cardDetails?.image" class="card-img-top" [src]="pageDetails?.details.notFoundImage" alt="Card image cap">
+    <img *ngIf="cardDetails?.image" class="card-img-top" [src]="cardDetails.image" alt="Card image cap">
+    <div class="card-body">
+      <div class="card-title">
+        <span class="item-name">{{cardDetails?.name}}</span>
+        <span class="float-right">Available Quantity: {{cardDetails?.quantity}}</span>
+      </div>
+      <div class="card-description">{{cardDetails?.description}}</div>
+      <p class="card-text">₹ {{cardDetails.price | number : '.2-2'}}</p>
+    </div>
+    <div class="card-footer">
+        <div *ngIf="!cardDetails?.selectedCount">
+            <button type="button" (click)="updateCartItem('add', cardDetails)" class="btn btn-secondary add-to-card-btn">Add to card</button>
+        </div>
+        <div
+            *ngIf="cardDetails?.selectedCount > 0" 
+            class="d-flex justify-content-between align-items-center action-item-wrap">
+            <button type="button" (click)="updateCartItem('del', cardDetails)" class="btn btn-secondary item-add-btn">-</button>
+            <span>{{cardDetails?.selectedCount}}/{{cardDetails?.quantity}}</span>
+            <button type="button" (click)="updateCartItem('add', cardDetails)" class="btn btn-secondary item-remove-btn">+</button>
+        </div>
+    </div>
+</div>

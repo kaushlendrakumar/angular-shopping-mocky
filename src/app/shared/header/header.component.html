@@ -1,0 +1,24 @@
+<div class="d-flex justify-content-between align-items-center header-conatiner">
+    <div class="header-left-col">
+        <div class="d-flex align-items-center">
+            <a class="navbar-brand brand-logo" href="#"></a>
+        <button type="button" (click)="cartBtn()" class="btn btn-primary cart-btn">
+            <span class="cart-icon"></span>
+            <span class="badge badge-light itme-count-label">{{totalCartItem}}</span>
+        </button>
+        </div>
+    </div>
+    <div class="header-right-col">
+        <div class="btn-group profile-btn">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="user-avatar"><img [src]="pageDetails?.appDetails?.userAvtar" alt=""></span>
+              {{pageDetails?.appDetails?.userName}}
+            </button>
+            <div class="dropdown-menu dropdown-menu-right">
+              <button class="dropdown-item" type="button">Action 1</button>
+              <button class="dropdown-item" type="button">Action 2</button>
+              <button class="dropdown-item" type="button">Action 3</button>
+            </div>
+        </div>
+    </div>
+</div>

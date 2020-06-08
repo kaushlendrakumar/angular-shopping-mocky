@@ -1,0 +1,21 @@
+.brand-logo{
+    background-image: url('../images/logo.png');
+    background-size: contain;
+    display: inline-block;
+    height: 54px !important;
+    width: 100px !important;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.cart-icon{
+    background-image: url('../images/shopping-cart.svg');
+    background-size: contain;
+    display: inline-block;
+    height: 18px !important;
+    width: 22px !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position: 0px 1px;
+    margin-top: 4px;
+    margin-right: 6px;
+}

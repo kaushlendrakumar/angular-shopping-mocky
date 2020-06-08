@@ -1,0 +1,13 @@
+<app-loader [loaderDetails]="loaderDetails"></app-loader>
+<div class="container-fluid listing-conatiner">
+    <div class="row listing-row">
+        <div class="col-md-12 listing-col">
+            <div class="row shopping-list-row">
+                <div class="col-md-4 col-xs-12 shopping-list-col"
+                    *ngFor="let itemDetails of pageDetails?.details?.itemListShow; trackBy: index">
+                    <app-shopping-card [cardDetails]="itemDetails" (updateCard)="updateCardHandler($event)"></app-shopping-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

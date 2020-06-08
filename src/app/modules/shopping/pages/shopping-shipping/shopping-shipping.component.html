@@ -1,0 +1,55 @@
+<form #shippingForm="ngForm">
+    <div class="container-fluid shipping-conatiner">
+        <div class="row shipping-row">
+            <div class="col-12 shipping-col">
+                <h3 class="title-1">Shipping</h3>
+            </div>
+            <!-- start left section -->
+            <div class="col-md-8 col-xs-12 shipping-left-col">
+                <div class="row form-row">
+                    <div class="col-12 form-col">
+                        <label>Name<sup>*</sup></label>
+                        <input type="text" class="form-control" 
+                            required [(ngModel)]="pageDetails.formDetails.name" name="pageDetails?.formDetails?.name">
+                    </div>
+                    <div class="col-12 form-col">
+                        <label>Address<sup>*</sup></label>
+                        <input type="text" class="form-control" placeholder="Line 1"
+                            required [(ngModel)]="pageDetails.formDetails.address.line1" name="pageDetails?.formDetails?.address?.line1">
+                        <input type="text" class="form-control mt-2" placeholder="Line 2"
+                            [(ngModel)]="pageDetails.formDetails.address.line2" name="pageDetails?.formDetails?.address?.line2">
+                    </div>
+                    <div class="col-12 form-col">
+                        <label>City<sup>*</sup></label>
+                        <input type="text" class="form-control"
+                            required [(ngModel)]="pageDetails.formDetails.city" name="pageDetails?.formDetails?.city">
+                    </div>
+                </div>
+            </div>
+            <!-- end left section -->
+            <!-- start right section -->
+            <div class="col-md-4 col-xs-12 shipping-right-col">
+                <div class="card order-summary-card">
+                    <div class="card-body">
+                        <h5 class="card-title-1">Order Summary</h5>
+                        <p class="card-title-2">You have {{pageDetails?.details?.selectdItems?.length}} items in your shopping cart.</p>
+                        <ul class="list-group list-group-flush">
+                            <li 
+                                *ngFor="let itemDetails of pageDetails?.details?.selectdItems; trackBy: index"
+                                class="list-group-item d-flex justify-content-between align-items-center">
+                                <div>{{itemDetails?.selectedCount}} * <span>{{itemDetails?.name}}</span></div>
+                                <div>${{itemDetails.price * itemDetails?.selectedCount | number : '.2-2'}}</div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <div>Total</div>
+                                <div>${{pageDetails?.totalPrice | number : '.2-2'}}</div>
+                            </li>
+                        </ul>
+                        <button class="btn btn-primary place-order-btn" type="submit" [disabled]="shippingForm.invalid" (click)="placeOrderBtn()">Place Order</button>
+                    </div>
+                </div>
+            </div>
+            <!-- end right section -->
+        </div>
+    </div>
+</form>

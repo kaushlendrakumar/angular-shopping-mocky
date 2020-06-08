@@ -1,0 +1,59 @@
+.shipping-conatiner{
+    padding: 64px 0px 0px 0px;
+    .shipping-row{
+        margin: 0px;
+        .shipping-col{
+            padding: 0px 12px;
+            .title-1{
+                padding: 12px 0px;
+            }
+        }
+        // start shipping-left-col
+        .shipping-left-col{
+            padding: 12px;
+            .form-row{
+                margin: 0px;
+                .form-col{
+                    padding: 0px 0px 12px 0px;
+                    label{
+                        margin-bottom: 2px;
+                        font-size: 12px;
+                        font-weight: bold;
+                        sup{
+                            color: red;
+                        }
+                    }
+                }
+            }
+        }
+        // end shipping-left-col
+        
+        // start shipping-right-col
+        .shipping-right-col{
+            padding: 12px;
+            .order-summary-card{
+                .card-body{
+                    .card-title-1{
+                        font-weight: bold;
+                    }
+                    .card-title-2{
+                        font-size: 12px;
+                    }
+                    ul{
+                        li{
+                            text-transform: capitalize;
+                            &:last-child{
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                    .place-order-btn{
+                        margin: 12px;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        // end shipping-right-col
+    }
+}
